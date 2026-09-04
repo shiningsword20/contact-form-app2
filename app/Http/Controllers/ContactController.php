@@ -22,6 +22,7 @@ class ContactController extends Controller
 
     public function confirm(StoreContactRequest $request)
     {
+        $request->flash();
         $validated = $request->validated();
         $category = Category::find($validated['category_id']);
         $tags = Tag::whereIn('id', $validated['tag_ids'] ?? [])->get();
