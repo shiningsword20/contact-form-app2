@@ -18,4 +18,16 @@ class Contact extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'gender',
+        'email',
+        'tel',
+        'address',
+        'building',
+        'category_id',
+        'detail',
+    ];
 }
